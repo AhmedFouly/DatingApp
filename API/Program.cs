@@ -15,11 +15,16 @@ builder.Services.AddIdentityServices(builder.Configuration);
 
 builder.Services.AddCors();
 
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
 app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors(
    corsPolicyBuilder => corsPolicyBuilder
