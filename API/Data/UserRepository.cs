@@ -41,7 +41,7 @@ namespace API.Data
         {
             return await _context.Users
                 .Include(p => p.Photos)
-                .FirstOrDefaultAsync(x => x.UserName == username);
+                .SingleOrDefaultAsync(x => x.UserName == username);
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
