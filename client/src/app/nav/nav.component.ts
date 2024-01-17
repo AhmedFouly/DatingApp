@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MembersService } from '../services/members.service';
 
 @Component({
   selector: 'app-nav',
